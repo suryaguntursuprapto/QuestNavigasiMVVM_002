@@ -38,7 +38,7 @@ fun Navigasi(
                 FormMahasiswaView(listGender = ListGender.listGender.map {id ->
                     konteks.resources.getString(id)
                 }, onSubmitClick = {
-
+                    viewModel.saveDataMhs(it)
                 } )
             }
 
