@@ -42,7 +42,9 @@ fun Navigasi(
                     navHost.navigate(Halaman.Data.name)
                 } )
             }
+            composable(route = Halaman.Data.name) {
 
+            }
         }
     }
 }
