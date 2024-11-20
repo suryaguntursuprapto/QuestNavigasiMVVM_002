@@ -12,7 +12,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.arsitekturmvvm.model.ListGender
+import com.example.arsitekturmvvm.ui.view.FormMahasiswaView
 import com.example.arsitekturmvvm.ui.viewmodel.MahasiswaViewModel
+import java.text.Normalizer.Form
 
 enum class Halaman{
     Form,
@@ -25,14 +28,20 @@ fun Navigasi(
     navHost: NavHostController = rememberNavController()
 ){
     Scaffold { isipadding ->
-        val uiState by viewModel.dataModel.collectAsState()
+        val dataModel by viewModel.dataModel.collectAsState()
         NavHost(
             modifier = modifier.padding(isipadding),
             navController = navHost, startDestination = Halaman.Form.name
         ){
             composable(route = Halaman.Form.name) {
                 val konteks = LocalContext.current
+                FormMahasiswaView(listGender = ListGender.listGender.map {id ->
+                    konteks.resources.getString(id)
+                }, onSubmitClick = {
+
+                } )
             }
+
         }
     }
 }
