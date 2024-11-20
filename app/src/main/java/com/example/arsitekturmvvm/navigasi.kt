@@ -39,6 +39,7 @@ fun Navigasi(
                     konteks.resources.getString(id)
                 }, onSubmitClick = {
                     viewModel.saveDataMhs(it)
+                    navHost.navigate(Halaman.Data.name)
                 } )
             }
 
