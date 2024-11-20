@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.arsitekturmvvm.ui.viewmodel.MahasiswaViewModel
 
@@ -28,7 +29,9 @@ fun Navigasi(
             modifier = modifier.padding(isipadding),
             navController = navHost, startDestination = Halaman.Form.name
         ){
+            composable(route = Halaman.Form.name) {
 
+            }
         }
     }
 }
