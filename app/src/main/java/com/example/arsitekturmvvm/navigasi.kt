@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -30,7 +31,7 @@ fun Navigasi(
             navController = navHost, startDestination = Halaman.Form.name
         ){
             composable(route = Halaman.Form.name) {
-
+                val konteks = LocalContext.current
             }
         }
     }
