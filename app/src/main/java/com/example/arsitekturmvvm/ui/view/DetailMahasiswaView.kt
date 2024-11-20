@@ -15,8 +15,9 @@ import com.example.arsitekturmvvm.model.Mahasiswa
 
 @Composable
 fun DetailMahasiswaView(
-    dataMhs : Mahasiswa,
-    modifier: Modifier
+    modifier: Modifier = Modifier,
+    dataMhs: Mahasiswa,
+    onSubmitClick: () -> Unit
 )
 {
     val listDataMhs = listOf(

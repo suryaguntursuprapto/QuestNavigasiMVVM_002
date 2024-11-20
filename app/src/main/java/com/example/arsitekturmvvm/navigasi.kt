@@ -13,9 +13,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.arsitekturmvvm.model.ListGender
+import com.example.arsitekturmvvm.ui.view.DetailMahasiswaView
 import com.example.arsitekturmvvm.ui.view.FormMahasiswaView
 import com.example.arsitekturmvvm.ui.viewmodel.MahasiswaViewModel
-import java.text.Normalizer.Form
 
 enum class Halaman{
     Form,
@@ -43,7 +43,12 @@ fun Navigasi(
                 } )
             }
             composable(route = Halaman.Data.name) {
-
+                DetailMahasiswaView(
+                    dataMhs = dataModel,
+                    onSubmitClick = {
+                       navHost.popBackStack()
+                    }
+                )
             }
         }
     }
